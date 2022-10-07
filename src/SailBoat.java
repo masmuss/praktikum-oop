@@ -60,16 +60,6 @@ public class SailBoat extends Boat {
 	}
 
 	/**
-	 * this method used to set sailboat
-	 * 
-	 * @param SailBoat sailBoat
-	 * @return void
-	 */
-	public void setSailBoat(SailBoat sailBoat) {
-		this.sailBoat = sailBoat;
-	}
-
-	/**
 	 * this method used to get sailboat
 	 * 
 	 * @return SailBoat sailBoat

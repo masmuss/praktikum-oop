@@ -1,5 +1,5 @@
 public class MotorBoat extends Boat {
-	private int horsePower;
+	private double horsePower;
 	/**
 	 * tax rate for motor boats is 10%
 	 */
@@ -14,19 +14,10 @@ public class MotorBoat extends Boat {
 	 * @param width
 	 * @param horsePower
 	 */
-	MotorBoat(String name, double length, double height, double width, int horsePower) {
+	MotorBoat(String name, double length, double height, double width, double horsePower) {
 		super(name, length, height, width);
 		this.horsePower = horsePower;
 		BoatStorage.motorBoatCount++;
-	}
-
-	/**
-	 * this method is used to set motor boat
-	 * 
-	 * @param MotorBoat motorBoat
-	 */
-	public void setMotorBoat(MotorBoat motorBoat) {
-		this.motorBoat = motorBoat;
 	}
 
 	/**

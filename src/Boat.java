@@ -64,16 +64,6 @@ public class Boat {
 	}
 
 	/**
-	 * this method is used for setting the boat value
-	 * 
-	 * @param int boatValue
-	 * @return void
-	 */
-	public void setBoatValue(int boatValue) {
-		this.boatValue = boatValue;
-	}
-
-	/**
 	 * this method is used for setting the boat owner
 	 * 
 	 * @param Owner owner
@@ -164,16 +154,35 @@ public class Boat {
 	}
 
 	/**
+	 * this method is used to set motor boat
+	 * 
+	 * @param MotorBoat motorBoat
+	 */
+	public void setMotorBoat(MotorBoat motorBoat) {
+		this.motorBoat = motorBoat;
+	}
+
+	/**
+	 * this method used to set sailboat
+	 * 
+	 * @param SailBoat sailBoat
+	 * @return void
+	 */
+	public void setSailBoat(SailBoat sailBoat) {
+		this.sailBoat = sailBoat;
+	}
+
+	/**
 	 * this method is used for getting the boat value
 	 * 
 	 * @param null
 	 * @return int boatValue
 	 */
 	public void setBoatValue() {
-		if (sailBoat != null)
-			this.boatValue = (this.sum() + sailBoat.totalMonthlyCharge()) * 0.0005;
+		if (this.sailBoat != null)
+			this.boatValue = (this.sum() + this.sailBoat.totalMonthlyCharge()) * 0.0005;
 		else
-			this.boatValue = (this.sum() + motorBoat.totalMonthlyCharge()) * 0.0005;
+			this.boatValue = (this.sum() + this.motorBoat.totalMonthlyCharge()) * 0.0005;
 	}
 
 	/**
@@ -194,7 +203,7 @@ public class Boat {
 	 * @return double totalMonthlyCharge
 	 */
 	public double totalMonthlyCharge() {
-		return sailBoat != null ? this.sum() + sailBoat.totalMonthlyCharge() + this.getBoatValue()
-				: this.sum() + motorBoat.totalMonthlyCharge() + this.getBoatValue();
+		return sailBoat != null ? this.sum() + this.sailBoat.totalMonthlyCharge() + this.getBoatValue()
+				: this.sum() + this.motorBoat.totalMonthlyCharge() + this.getBoatValue();
 	}
 }
